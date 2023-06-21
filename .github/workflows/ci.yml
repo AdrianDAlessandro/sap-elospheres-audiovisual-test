@@ -7,7 +7,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up conda
-    - uses: s-weigand/setup-conda@v1
-    - run: conda env update --file seat.yml --name base
+      - uses: actions/checkout@v2
+      - name: Set up conda
+      - uses: s-weigand/setup-conda@v1
+      - run: conda env update --file seat.yml --name base

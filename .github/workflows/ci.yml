@@ -3,24 +3,11 @@ name: Test and deploy
 on: [push]
 
 jobs:
-  # build-linux:
-  #   runs-on: windows-latest
-
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: Set up Python 3.8
-  #     uses: actions/setup-python@v2
-  #     with:
-  #       python-version: 3.8
-  #   - name: Install dependencies
-  #     run: |
-  #       echo conda path: $CONDA
-  #       conda env update --file seat.yml --name base
   build:
     runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
+      - name: Set up conda
       - uses: s-weigand/setup-conda@v1
-      - run: conda --version
-      - run: which python
+      - run: conda env update --file seat.yml --name base

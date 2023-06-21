@@ -13,5 +13,4 @@ jobs:
       with:
         python-version: 3.8
     - name: Install dependencies
-      run: |
-        $CONDA\bin\conda env update --file seat.yml --name base
+      run: conda env update --file seat.yml --name base

@@ -9,17 +9,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up conda environment
-        uses: s-weigand/setup-conda@v1
-      - run: conda env update --file seat.yml --name base
+      - name: Install jack
+      - run: |
+        choco install jack
+        Get-Command jackd
 
-      - name: Build executable
-        working-directory: ./seat
-        run: pyinstaller seat-gui.spec
+      # - name: Set up conda environment
+      #   uses: s-weigand/setup-conda@v1
+      # - run: conda env update --file seat.yml --name base
 
-      - name: Upload executable as test artifact
-        uses: actions/upload-artifact@v3
-        if: success()
-        with:
-          name: seat-gui
-          path: seat/dist/seat-gui.exe
+      # - name: Build executable
+      #   working-directory: ./seat
+      #   run: pyinstaller seat-gui.spec
+
+      # - name: Upload executable as test artifact
+      #   uses: actions/upload-artifact@v3
+      #   if: success()
+      #   with:
+      #     name: seat-gui
+      #     path: seat/dist/seat-gui.exe

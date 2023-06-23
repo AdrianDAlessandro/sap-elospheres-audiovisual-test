@@ -11,7 +11,7 @@ jobs:
 
       - name: Install jack
         run: |
-          choco install jack
+          choco install -y jack
           Get-Command jackd
 
       # - name: Set up conda environment

@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install jack
-      - run: |
+        run: |
           choco install jack
           Get-Command jackd
 

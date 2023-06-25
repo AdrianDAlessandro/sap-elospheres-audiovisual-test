@@ -10,10 +10,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install jack
-        run: |
-          $env:PATH = "C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin"
-          [Environment]::SetEnvironmentVariable("Path", $env:PATH, "Machine")
-          choco install --yes jack --timeout 300
+        run: winget install JACK2
       # Get-Command jackd
 
       # - name: Set up conda environment

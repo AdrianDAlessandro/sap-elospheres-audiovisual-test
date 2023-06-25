@@ -13,7 +13,7 @@ jobs:
         run: |
           $env:PATH = "C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin"
           [Environment]::SetEnvironmentVariable("Path", $env:PATH, "Machine")
-          choco install --yes jack
+          choco install --yes jack --timeout 300
       # Get-Command jackd
 
       # - name: Set up conda environment

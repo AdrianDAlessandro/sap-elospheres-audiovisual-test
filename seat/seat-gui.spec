@@ -13,7 +13,7 @@ DEFAULT_JACKTRIP_PATH = 'C:/jacktrip'
 bundled = ("jackd", "jack_connect", "jack_disconnect", "jacktrip")
 path = os.environ["PATH"]
 if sys.platform == "win32":
-    path = f"{DEFAULT_JACK_PATH};{DEFAULT_JACKTRIP_PATH};{path}"
+    path = f"{DEFAULT_JACK_PATH};{DEFAULT_JACKTRIP_PATH};../winbin;{path}"
 
 binaries = []
 for prog in bundled:

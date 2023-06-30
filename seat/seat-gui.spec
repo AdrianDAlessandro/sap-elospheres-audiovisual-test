@@ -19,7 +19,7 @@ binaries = []
 for prog in bundled:
     prog_path = which(prog, path=path)
     if prog_path:
-        binaries.append((prog_path, "bin/"))
+        binaries.append((prog_path, "."))
     else:
         warn(f"Could not find {prog}; it will not be bundled")
 

@@ -59,7 +59,7 @@ class JackTripControl:
         if args is not None:
             self.moduleConfig.set_args(args)
 
-        bin_dir = pathlib.Path(__file__).parent.parent / "bin"
+        bin_dir = pathlib.Path(__file__).parent.parent
         if not self.moduleConfig["jack_root"].as_path().exists() and (bin_dir / "jackd.exe").exists():
             warn('Jack not found at specified path, using bundled version')
             self.moduleConfig["jack_root"] = str(bin_dir)
